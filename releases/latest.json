@@ -1,95 +1,95 @@
 {
   "schema": 1,
-  "version": "3.5.0",
-  "published_at": "2026-10-17T06:04:44.357322+00:00",
-  "notes": "# L4NTrak 3.5.0 \u2014 Connected drive\n\n- Original-inspired icon: white sedan, cyan road lines and amber navigation pointer on navy.\n- Live hub music controller detects an active Android media session, Linux MPRIS player or local Maps queue. Control this device or a fresh paired device on your own account. Remote controls require saved permission on the receiving device, expire after 15 seconds and show acknowledgement.\n- Paired devices exchange short-lived media status during foreground heartbeats. Vehicle edits/files retain verified snapshot sync and conflict review; this is not simultaneous collaborative editing.\n- Assistant navigation commands now open Maps and set a verified road route for a unique saved place, coordinate or search result. Multiple matches stay a visible choice. Add stops, start guidance, next turn/ETA, reroute and map controls work without model inference. Saved-vehicle questions receive a real record lookup before inference; tool logs show what was read.\n- More prominent two-note camera warning and amber Camera Ahead banner. Existing GPS checks, entry deduplication and 15-second cooldown remain. Android uses media volume; no forced volume change.\n- Audio-only direct and group voice calls for up to six members, with encrypted/signed friend signaling, explicit microphone permission, mute/deafen and foreground cleanup. Requires a working local/private-VPN WebRTC path. No hosted TURN relay, background calls or recording.\n- Friends delivery receipts and a separate chat-only VPN connection. VPN-only mode sends to configured peers without LAN broadcast and rejects other transport senders; friend identities and signed encryption still authenticate every message. Voice signaling removes LAN/mDNS candidates in VPN-only mode. Chat access does not enable vehicle/device hub features. Existing identities and histories stay local to each device; vehicle sync does not silently transfer friend private keys.\n- Private VPN IPv4 pairing support, including Tailscale's 100.64.0.0/10 range. Remote PC guide in Live hub; keep both apps open and allow the documented ports between your own devices.\n- Linux native installation dialog verifies the downloaded DEB again, invokes system authorization, shows output and confirms installed version. Requires pkexec and gdebi. Cancel/error states stay visible. Save DEB and terminal fallback remain available.\n- Delete unwanted visual parts from their editor without deleting the linked build job or model file.\n- Six-step quick setup or ten-step guided setup, account-scoped recoverable drafts and corrected location/update/nearby guidance. Device page-focus presets and optional quiet interface sounds.\n\nInstall over the existing app; do not uninstall. Update both devices for the hub protocol. A PC still running 3.4.4 may need this DEB installed manually once before the new native installation bridge is available.\n\nPhysical Android/GTK permissions, actual system upgrade, road GPS/audio, Bluetooth and off-network VPN behavior still require your device testing. Synthetic browser audio is not a road or hardware audio test.\n\nAll app features remain free with no subscription gate; compatible optional paid accessories remain supported. Hardware and third-party provider charges are separate.\n",
+  "version": "3.5.1",
+  "published_at": "2026-10-17T06:33:38.321116+00:00",
+  "notes": "# L4NTrak 3.5.1 \u2014 music detection fixes\n\nInstall over the existing app on both devices. Keep app data.\n\n- Devices signed in with the same imported account ignore each other in nearby-driver discovery. Rotating private-key-derived aliases avoid broadcasting account IDs and cover five-minute clock boundaries. Local hub/device presence is unaffected.\n- PCs using phone GPS, approximate location, no speed or stationary GPS remain receive-only in nearby/friend map sharing. A moving laptop with its own GPS receiver may share above 2 mph with accuracy within 30 m and a fresh fix. Optional USB/GNSS receivers use local gpsd on port 2947. Nearby packets still omit speed. Phone or moving-PC origin markers are required; unlabelled older senders are hidden. Update phones to this version to keep them visible. Hub/device presence remains separate.\n- Live hub keeps playback and device status visible while connection setup and device customization are collapsed. Maps starts with drawing tools collapsed and gives them a named options entry. Explore separates Devices & chat from Settings & history. No saved data or feature is removed.\n- Live hub checks active device music even when a paused Maps queue exists. Playing external music wins; an actively playing Maps queue remains supported.\n- A paired phone playing music can be selected automatically when the PC is idle or paused. Song display does not require remote music-control consent. Remote buttons remain disabled until that device grants control.\n- Android shows missing notification access, a disconnected listener or a player with no metadata as separate states. It retries listener binding, accepts display-title metadata and identifies the player. No notification contents are collected or stored.\n- Refresh playback and foreground/resume refresh make permission changes and player switching easier to recover. Detection diagnostics travel through the existing account-authenticated hub heartbeat.\n- Live hub controls target the detected external player rather than a paused Maps queue. Trak explains music permissions and connection capabilities without model inference. Android, desktop and shared inference paths have matching current app capability descriptions.\n- Private connections guidance now clearly exposes the existing built-in encrypted local path over trusted Wi-Fi or a private hotspot, with separate hub and friend permissions. No VPN app is needed on that local path. Separate-network internet connections still require a reachable private VPN. This release does not include a built-in internet VPN or a hosted relay; local mode does not hide local IP addresses from peers.\n\nAll features remain free. Existing identities, friends, accounts, vehicle data and signing certificate are retained. Historical migrations and compatibility paths are retained rather than deleted as clutter. This is a focused review of music, AI capability descriptions and connection guidance, not a complete audit of every app screen or an update to local model training data.\n\nValidation and remaining device checks are recorded in VALIDATION_3.5.1.json. Physical Android media players/notification access, audible output, real phone-to-PC delivery and installation still require device testing.\n",
   "assets": {
     "android": {
-      "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk",
+      "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk",
       "size": 54888340,
-      "sha256": "502a4db2b412f4bb0d518985b488212021e70ba55e954e4289b0fbf1c2b0e74b",
+      "sha256": "5048690fc375bdd130e1b76b5046e5063416ee73a43abe1874ad2fee2021518c",
       "parts": [
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-000",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-000",
           "size": 4194304,
-          "sha256": "0d7873b208326a590987590654694cef1d986c3b6d88ef6ba68638d4c35e0186"
+          "sha256": "ab2a0f4995d5fc2e4d09eac7ecb22ec256e5d12ba40d139c0418da15dac895c5"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-001",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-001",
           "size": 4194304,
           "sha256": "f594419e6c5a1c7be622a2d11c663bb7a191e9427ac0781486fdba3bbea80908"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-002",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-002",
           "size": 4194304,
           "sha256": "7bb54871f7eb13c26cd49f6b5cf7f20e75d2574bc7a0214df66eef9b5b9c998d"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-003",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-003",
           "size": 4194304,
           "sha256": "811767e53201d5ed24ce0458486a7e5954df266d77d0faf21c1e1a529ac00203"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-004",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-004",
           "size": 4194304,
           "sha256": "53f988241b78da43cd0ffbac66b9c13d4c1ab8112c9d5c9954355e37aab85aec"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-005",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-005",
           "size": 4194304,
           "sha256": "1e816d1b9c28c5ba66988aefa332b5b8f238e7d131c06f7d0bfaacd8843084ee"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-006",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-006",
           "size": 4194304,
           "sha256": "0ea602d7fd2fcad9d36ec24379af12847ea4694dd827d43ad4b479f5752fc7c5"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-007",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-007",
           "size": 4194304,
           "sha256": "c97554b6aa1402f28cb64d9166a80352f3ef61f79858038131fbfbaed51e7972"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-008",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-008",
           "size": 4194304,
           "sha256": "9779a8ffb3000a44783300b2ef892235fa876bdce2c7dcb7f0af246308517b26"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-009",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-009",
           "size": 4194304,
           "sha256": "b27fc7dc922b08d4f88b00fb5e50be24bd11d0612e04bb7a7d619d2f992212a2"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-010",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-010",
           "size": 4194304,
           "sha256": "0fa44919658443407fcf5165beb34944c5849094d18ed346d95d64e8b559021b"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-011",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-011",
           "size": 4194304,
           "sha256": "b1084f4633809b973303d7d18e58b857eb833350e70e18e72e7aa00cba3f65cb"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-012",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-012",
           "size": 4194304,
           "sha256": "885b6559665792befb74d5362a492283ba262a57f663ed0e54caabba0dce2ec7"
         },
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_Android.apk.part-013",
+          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-013",
           "size": 362388,
-          "sha256": "a482534cd01b98808b030bae1b618d84821809708bddc2a8e7afe9492a36694f"
+          "sha256": "1b477e7fd558155e743896b8ea6dac3520535a76c07374ae6a595aebc8f68f7a"
         }
       ]
     },
     "linux": {
-      "path": "releases/3.5.0/L4NTrak_3.5.0_all.deb",
-      "size": 2776266,
-      "sha256": "c405edae37346a24b648c637c57e269f80c885f6701181f28765c321d4c94595",
+      "path": "releases/3.5.1/L4NTrak_3.5.1_all.deb",
+      "size": 2778840,
+      "sha256": "345041477a5dad575d0b9e79e471ba0522ce0c6b77fc604d69b75321857bac06",
       "parts": [
         {
-          "path": "releases/3.5.0/L4NTrak_3.5.0_all.deb.part-000",
-          "size": 2776266,
-          "sha256": "c405edae37346a24b648c637c57e269f80c885f6701181f28765c321d4c94595"
+          "path": "releases/3.5.1/L4NTrak_3.5.1_all.deb.part-000",
+          "size": 2778840,
+          "sha256": "345041477a5dad575d0b9e79e471ba0522ce0c6b77fc604d69b75321857bac06"
         }
       ]
     }
