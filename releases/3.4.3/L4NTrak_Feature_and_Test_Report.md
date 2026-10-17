@@ -1,0 +1,15 @@
+# L4NTrak 3.4.3 — account images and PC–phone sync
+
+Full account transfer now includes your sign-in identity, all accessible vehicles, cover photos, receipts, attachments and model files. The existing identity-only JSON export remains available and is clearly labelled. Importing a full ZIP validates its projects and media before applying them. Newer local copies and independent edits are retained for review.
+
+Wireless Sync now receives missing allowed PC vehicles automatically. Current Android and PC versions transfer project ZIPs through verified 256 KiB chunks on disk instead of placing the complete ZIP in the JavaScript bridge. Per-chunk and whole-file checks stay inside the existing signed, encrypted pairing protocol. Transfer progress is visible. Older PCs retain the legacy transfer path.
+
+Matching histories check attachment health and can repair missing or damaged image/file bytes from a healthy peer without replacing records or creating an edit-history fork. Newer incoming projects can also recover damaged local media; diagnostic recovery snapshots mark files that were already missing or damaged. Independent edits, changed permissions and transfers whose destination changed remain blocked for review. USB/shared-folder transfers also stream project ZIPs on Android.
+
+Install 3.4.3 over the existing app on both devices; keep app data. To recover images from an older identity import, export **Full account with images** from the device that still holds them, then import that ZIP using **Use existing account**. Android provides a dedicated full-ZIP picker. Alternatively, enable the PC host, save a two-way pairing on the phone and tap **Sync now**. Both apps must be open on the same local network or paired Bluetooth. Account sign-in alone does not provide internet/cloud sync.
+
+Full account ZIP vehicle data is not encrypted; keep these backups private. Limits: 150 MB per compressed transfer, 300 MB expanded, 20 MB per attached file, 50 vehicles per account bundle. Use individual vehicle backups for larger garages. Old identity-only files cannot supply image bytes they never contained.
+
+Validation: 96 Python cases executed (94 passed, two unavailable historical fixtures skipped), 17 JavaScript/DOM/math suites and 20 browser suites passed. Includes actual Java native ZIP/chunk code moving a 27 MB photo project in both directions with a 32 MB JVM heap through a controlled carrier into the authenticated desktop host, full account Python→Java→Python interoperability, image corruption/missing-file repair, bad-password/tamper rejection, access revocation, head-change conflicts, and actual browser full-ZIP export/import and image retrieval. Android SDK build/signature and Debian package smoke verification accompany the installers.
+
+No physical phone or Linux Mint device is attached here. Real Wi-Fi/Bluetooth delivery, Android document-provider/save dialogs, PackageManager installation and hardware GPS/voice/AI behavior still need device checks. The two skipped cases require unavailable original migration fixtures. Controlled transport tests do not establish physical-radio delivery.

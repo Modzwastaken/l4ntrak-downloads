@@ -1,0 +1,47 @@
+name: Publish verified L4NTrak release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - releases/latest.json
+      - .github/workflows/publish-release.yml
+      - packaging/verify_release.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: l4ntrak-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify and assemble installers
+        run: python3 packaging/verify_release.py --output-dir "$RUNNER_TEMP/l4ntrak-release"
+      - name: Upload and publish public release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(cat VERSION)"
+          tag="v$version"
+          assets_dir="$RUNNER_TEMP/l4ntrak-release"
+          if gh release view "$tag" --json isDraft >/dev/null 2>&1; then
+            if [[ "$(gh release view "$tag" --json isDraft --jq .isDraft)" != true ]]; then
+              echo "Release $tag is already published; leaving its assets unchanged."
+              exit 0
+            fi
+          else
+            gh release create "$tag" --draft --target "$GITHUB_SHA" --title "L4NTrak $version" --notes-file "$assets_dir/release-notes.md"
+          fi
+          gh release upload "$tag" "$assets_dir/L4NTrak_${version}_Android.apk" "$assets_dir/L4NTrak_${version}_all.deb" "$assets_dir/L4NTrak_${version}_Update_Manifest.json" "$assets_dir/L4NTrak_Quick_Start.md" "$assets_dir/L4NTrak_Feature_and_Test_Report.md" "$assets_dir/SHA256SUMS.txt" --clobber
+          gh release edit "$tag" --draft=false --latest --notes-file "$assets_dir/release-notes.md"
