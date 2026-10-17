@@ -1,95 +1,95 @@
 {
   "schema": 1,
-  "version": "3.4.3",
-  "published_at": "2026-10-17T01:37:06.332242+00:00",
-  "notes": "# L4NTrak 3.4.3 \u2014 account images and PC\u2013phone sync\n\nFull account transfer now includes your sign-in identity, all accessible vehicles, cover photos, receipts, attachments and model files. The existing identity-only JSON export remains available and is clearly labelled. Importing a full ZIP validates its projects and media before applying them. Newer local copies and independent edits are retained for review.\n\nWireless Sync now receives missing allowed PC vehicles automatically. Current Android and PC versions transfer project ZIPs through verified 256 KiB chunks on disk instead of placing the complete ZIP in the JavaScript bridge. Per-chunk and whole-file checks stay inside the existing signed, encrypted pairing protocol. Transfer progress is visible. Older PCs retain the legacy transfer path.\n\nMatching histories check attachment health and can repair missing or damaged image/file bytes from a healthy peer without replacing records or creating an edit-history fork. Newer incoming projects can also recover damaged local media; diagnostic recovery snapshots mark files that were already missing or damaged. Independent edits, changed permissions and transfers whose destination changed remain blocked for review. USB/shared-folder transfers also stream project ZIPs on Android.\n\nInstall 3.4.3 over the existing app on both devices; keep app data. To recover images from an older identity import, export **Full account with images** from the device that still holds them, then import that ZIP using **Use existing account**. Android provides a dedicated full-ZIP picker. Alternatively, enable the PC host, save a two-way pairing on the phone and tap **Sync now**. Both apps must be open on the same local network or paired Bluetooth. Account sign-in alone does not provide internet/cloud sync.\n\nFull account ZIP vehicle data is not encrypted; keep these backups private. Limits: 150 MB per compressed transfer, 300 MB expanded, 20 MB per attached file, 50 vehicles per account bundle. Use individual vehicle backups for larger garages. Old identity-only files cannot supply image bytes they never contained.\n\nValidation: 96 Python cases executed (94 passed, two unavailable historical fixtures skipped), 17 JavaScript/DOM/math suites and 20 browser suites passed. Includes actual Java native ZIP/chunk code moving a 27 MB photo project in both directions with a 32 MB JVM heap through a controlled carrier into the authenticated desktop host, full account Python\u2192Java\u2192Python interoperability, image corruption/missing-file repair, bad-password/tamper rejection, access revocation, head-change conflicts, and actual browser full-ZIP export/import and image retrieval. Android SDK build/signature and Debian package smoke verification accompany the installers.\n\nNo physical phone or Linux Mint device is attached here. Real Wi-Fi/Bluetooth delivery, Android document-provider/save dialogs, PackageManager installation and hardware GPS/voice/AI behavior still need device checks. The two skipped cases require unavailable original migration fixtures. Controlled transport tests do not establish physical-radio delivery.\n",
+  "version": "3.4.4",
+  "published_at": "2026-10-17T05:23:22.241979+00:00",
+  "notes": "# L4NTrak 3.4.4\n\nInstall this patch over 3.4.3 on both your Android phone and Linux PC. Existing package identity, signing certificate, accounts, projects and attachments are retained.\n\n- **Visible Sync Now:** Settings has a Devices & sync card above the category tabs. Desktop also has Sync Now in Device pairing. A PC request is delivered through the authenticated pairing catalog; the phone checks both copies even when its Auto Sync is off. Keep both apps open and finish open editors. Existing history-conflict and project-access checks remain.\n- **Phone GPS on PC:** fresh phone positions work while stationary and when speed is unavailable. Open Maps on both devices with the same vehicle selected. Location permission and a local paired connection are required. Stale, background, approximate and unauthorized fixes are excluded. Unsent updates retry after a busy transfer, including Location off.\n- **Nearby drivers:** Maps has Save nearby settings. Enablement, transport, convoy key and display distance are saved on this device for this account. The saved choice survives navigation and restart; sharing pauses outside foreground Maps and resumes on return. Anonymous packets still omit speed. Private friend sharing remains a separate per-session opt-in.\n- **Trak AI:** general knowledge questions are no longer limited to garage or map records. Explicit music requests run through app controls before model inference, including play, pause, next, previous, volume and now-playing. Android uses active media sessions / media keys; Linux uses MPRIS players. Commands report requests or failures rather than inventing successful playback. General conversation still needs an installed local model or a reachable paired PC. Offline guidance now states its scope for unrelated questions instead of returning an unrelated workshop answer.\n- **Phone AI fallback:** Prefer paired PC uses the saved phone model and the phone-local endpoint when the PC is disconnected or its request fails. Phone only works independently of the PC. The engine choice is stored per account on this device; the fallback model can be saved separately. The paired-PC model warm-up action is supported.\n- **3D spoilers:** the built-in sedan spoiler and custom spoiler objects follow the trunk hinge while preserving their closed placement, rotation and offsets. Unrigged imported bodies retain their existing behavior.\n- **Garage main photos:** bounded frames use contain sizing so portrait, square and wide photos remain inside the card without cropping. Conflicting square/max-height rules no longer cut the image outside its panel.\n\n- **Linux update handoff:** detects installers that exit immediately, tries available system installers with a clean runtime environment, and provides explicit Install in terminal and Save verified DEB recovery buttons. The backup and hash checks apply before launch; a delegated launch is reported as requested, not proof of a visible window.\n\nAutomated tests use controlled model, media, location and transport adapters where hardware/services are unavailable. Actual Android/Linux installation, GPS delivery, Wi-Fi/Bluetooth radios, notification permissions, media playback and local-model answer quality still need testing on your devices. This patch does not add cloud sync.\n",
   "assets": {
     "android": {
-      "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk",
-      "size": 55350822,
-      "sha256": "82cde9e521693330850ebd29a8beab3dc03988cb6bc5040873d108dc8987b8a5",
+      "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk",
+      "size": 55350979,
+      "sha256": "91dda79befa71af9511dfc487694ee75d82ce6e643747f89281634b28b683c40",
       "parts": [
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-000",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-000",
           "size": 4194304,
-          "sha256": "82cc6a373c47fb6d5db4499a95cc403a9470b6ea2ed3a7875b7b9af1d789ec99"
+          "sha256": "de5e670bcf946a5be00b1d08ec71096f2efa4de7998aabcac51f56dce2f13de9"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-001",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-001",
           "size": 4194304,
           "sha256": "28d8541135e3da8d7cb393f41659bbeeeaa9cc9848839cc8909ea4b50742945f"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-002",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-002",
           "size": 4194304,
           "sha256": "e978ef1c21b354bb2a0e842d958767954d118f08ddac31f4981302a301ec5263"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-003",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-003",
           "size": 4194304,
           "sha256": "2dd38ac74eb6b5ce79dab2b6075ae360e064fb189489eb3426e6ec1f369cd3d1"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-004",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-004",
           "size": 4194304,
           "sha256": "4834386a48a0f3b8f70d28a2c6c2fb4a6d59118a76ac5959a850ffedd4b06243"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-005",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-005",
           "size": 4194304,
           "sha256": "497e006e7993ad068d35339f663361cada14732f4bb78647caae988155f81955"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-006",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-006",
           "size": 4194304,
           "sha256": "40222b6da039032518da3642f346abd10903a79b12c7dc1d90791536a4212450"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-007",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-007",
           "size": 4194304,
           "sha256": "471d5f7c037e242537d1608df095d68a9893e6d9d646b151e3350b3dc3332394"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-008",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-008",
           "size": 4194304,
           "sha256": "3d4e49a9b2788d662b92e9463d3359b92fff5c4f1954cd0c82f2c913623fbfd8"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-009",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-009",
           "size": 4194304,
           "sha256": "4a55bdfcdc4da23a326d3850a7a3a56d07188842b70085f42ae63672c897400c"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-010",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-010",
           "size": 4194304,
           "sha256": "267f493819951a80876a70354ecd79bea52f1c8404d23703d4049a4c34009552"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-011",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-011",
           "size": 4194304,
           "sha256": "275df32d4158e17965902983347a453aebde49851ab23fcf66dbdc3a165913cb"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-012",
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-012",
           "size": 4194304,
           "sha256": "da347e27eeb751dc9f8ae45b09a0c1c8339aa983aece14c4172ae8046ae095e9"
         },
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_Android.apk.part-013",
-          "size": 824870,
-          "sha256": "23b72a0e41a3bb8537214d8ec7b69f40c2bf910be4edf0e8dd4d225d2581c310"
+          "path": "releases/3.4.4/L4NTrak_3.4.4_Android.apk.part-013",
+          "size": 825027,
+          "sha256": "fb9f8ca32e760d5880febed2d372588861b187f6509cf0eebfa8e5b31368a7c1"
         }
       ]
     },
     "linux": {
-      "path": "releases/3.4.3/L4NTrak_3.4.3_all.deb",
-      "size": 2747654,
-      "sha256": "3e3d67232de3a6fc30906ea75f5a895d904efff797c476f832b17e3c9655fd76",
+      "path": "releases/3.4.4/L4NTrak_3.4.4_all.deb",
+      "size": 2754518,
+      "sha256": "9c9cad0f87c9d63b80f1c236a4d9caf9fd21ac8d6fdc9476a8c38405f5e38539",
       "parts": [
         {
-          "path": "releases/3.4.3/L4NTrak_3.4.3_all.deb.part-000",
-          "size": 2747654,
-          "sha256": "3e3d67232de3a6fc30906ea75f5a895d904efff797c476f832b17e3c9655fd76"
+          "path": "releases/3.4.4/L4NTrak_3.4.4_all.deb.part-000",
+          "size": 2754518,
+          "sha256": "9c9cad0f87c9d63b80f1c236a4d9caf9fd21ac8d6fdc9476a8c38405f5e38539"
         }
       ]
     }
