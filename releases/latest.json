@@ -1,95 +1,110 @@
 {
   "schema": 1,
-  "version": "3.5.1",
-  "published_at": "2026-10-17T06:33:38.321116+00:00",
-  "notes": "# L4NTrak 3.5.1 \u2014 music detection fixes\n\nInstall over the existing app on both devices. Keep app data.\n\n- Devices signed in with the same imported account ignore each other in nearby-driver discovery. Rotating private-key-derived aliases avoid broadcasting account IDs and cover five-minute clock boundaries. Local hub/device presence is unaffected.\n- PCs using phone GPS, approximate location, no speed or stationary GPS remain receive-only in nearby/friend map sharing. A moving laptop with its own GPS receiver may share above 2 mph with accuracy within 30 m and a fresh fix. Optional USB/GNSS receivers use local gpsd on port 2947. Nearby packets still omit speed. Phone or moving-PC origin markers are required; unlabelled older senders are hidden. Update phones to this version to keep them visible. Hub/device presence remains separate.\n- Live hub keeps playback and device status visible while connection setup and device customization are collapsed. Maps starts with drawing tools collapsed and gives them a named options entry. Explore separates Devices & chat from Settings & history. No saved data or feature is removed.\n- Live hub checks active device music even when a paused Maps queue exists. Playing external music wins; an actively playing Maps queue remains supported.\n- A paired phone playing music can be selected automatically when the PC is idle or paused. Song display does not require remote music-control consent. Remote buttons remain disabled until that device grants control.\n- Android shows missing notification access, a disconnected listener or a player with no metadata as separate states. It retries listener binding, accepts display-title metadata and identifies the player. No notification contents are collected or stored.\n- Refresh playback and foreground/resume refresh make permission changes and player switching easier to recover. Detection diagnostics travel through the existing account-authenticated hub heartbeat.\n- Live hub controls target the detected external player rather than a paused Maps queue. Trak explains music permissions and connection capabilities without model inference. Android, desktop and shared inference paths have matching current app capability descriptions.\n- Private connections guidance now clearly exposes the existing built-in encrypted local path over trusted Wi-Fi or a private hotspot, with separate hub and friend permissions. No VPN app is needed on that local path. Separate-network internet connections still require a reachable private VPN. This release does not include a built-in internet VPN or a hosted relay; local mode does not hide local IP addresses from peers.\n\nAll features remain free. Existing identities, friends, accounts, vehicle data and signing certificate are retained. Historical migrations and compatibility paths are retained rather than deleted as clutter. This is a focused review of music, AI capability descriptions and connection guidance, not a complete audit of every app screen or an update to local model training data.\n\nValidation and remaining device checks are recorded in VALIDATION_3.5.1.json. Physical Android media players/notification access, audible output, real phone-to-PC delivery and installation still require device testing.\n",
+  "version": "3.5.2",
+  "published_at": "2026-10-17T06:46:00.624715+00:00",
+  "notes": "# L4NTrak 3.5.2 \u2014 built-in WireGuard and music/nearby fixes\n\nInstall over the existing app on PC and phone. Do not uninstall or clear app data.\n\n## Built-in private VPN\n\nLive hub \u2192 Connection setup \u2192 Built-in private VPN now contains native WireGuard controls. Android includes the official WireGuard tunnel library (1.0.20260102); Linux uses the system WireGuard tools installed with the DEB. No separate VPN client app is required. Device-local private keys stay in native private files; only public peer cards enter the shared interface. Profiles are separate per account and per device.\n\n1. On each device, open Device setup & public peer card. The app assigns a 10.77.x.x address. Choose unique addresses.\n2. At least one device needs a reachable endpoint. For a home PC, enter its reachable hostname/public address and UDP listen port (normally 51820), then forward/allow that UDP port on its router/firewall. The endpoint in a shared peer card can reveal that host's public address. Carrier-grade NAT may require a reachable server.\n3. Save setup, exchange public peer cards privately, and add each device's card on the other device. Save again. Never add your own card as a peer.\n4. Connect on both devices and approve Android VPN consent / Linux system authorization. A started interface is not proof of remote reachability. Android reports recent verified WireGuard handshakes when available.\n5. For your own PC/phone, use the peer's 10.77.x.x address in normal Device pairing and use the private pairing code. For friends, choose Use these VPN peers for Friends, then exchange friend IDs separately. VPN peers do not receive vehicle, file, AI or music-control permissions.\n\nOnly selected peer host routes in 10.77.0.0/16 use this tunnel. Android additionally limits it to L4NTrak. This is a direct-peer VPN: no automatic NAT traversal, transit relay, router changes, DNS change or whole-internet tunnel. Phone-to-phone links still need a reachable endpoint; this does not turn an unreachable home PC into a public relay. Existing VPNs remain supported. Android asks before replacing another active VPN. Disconnect before switching accounts; Linux tunnel interfaces may persist until explicitly disconnected. Android closes its tunnel when the activity is destroyed. There is no automatic boot connection.\n\n## Included music, maps and interface fixes\n\n- Live hub reads active external music before a paused Maps queue. Paired-phone metadata can appear without remote-control consent; control buttons remain permission-gated.\n- Android music detection distinguishes missing notification access, a disconnected listener and missing player metadata. It rebinds the listener, accepts display-title metadata and refreshes on resume or Refresh playback.\n- Same-account devices ignore each other in Nearby drivers using rotating private-key-derived aliases, without broadcasting account IDs. Unlabelled older senders are hidden: update participating phones too.\n- PCs with phone/IP location remain receive-only. A laptop can share its own fresh local gpsd GPS above 2 mph with accuracy within 30 m. Nearby/friend map packets still omit speed.\n- Music and device status stay visible. Connection setup and customization are expandable; Maps drawing tools start collapsed. Explore has a separate Devices & chat category.\n- All AI paths have matching current app capability descriptions, including supported navigation, music and VPN setup. This updates app context, not model training data.\n\nAll features remain free. Signing identity and existing data are retained. VALIDATION_3.5.2.json records automated coverage. Physical Android VPN consent, native OS interface setup, router reachability, off-network WireGuard handshakes, real media apps, GPS receivers and installation still require device testing. The privileged Linux helper is tested for config validation; no root network interface was created in this build environment.\n",
   "assets": {
     "android": {
-      "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk",
-      "size": 54888340,
-      "sha256": "5048690fc375bdd130e1b76b5046e5063416ee73a43abe1874ad2fee2021518c",
+      "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk",
+      "size": 69323267,
+      "sha256": "66c64740f23670eea1cff6c0607a36f5307d659f3e3ee0665d4b04b0e9ccb6fb",
       "parts": [
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-000",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-000",
           "size": 4194304,
-          "sha256": "ab2a0f4995d5fc2e4d09eac7ecb22ec256e5d12ba40d139c0418da15dac895c5"
+          "sha256": "3ea475106d17be094be309374285b8ee2d2c18987c746c078e51842cf7f05dae"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-001",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-001",
           "size": 4194304,
-          "sha256": "f594419e6c5a1c7be622a2d11c663bb7a191e9427ac0781486fdba3bbea80908"
+          "sha256": "4bb4ca5cbbcaefc5a84f6f31f84840e52810d849e1abfe15b46be54e3b49e9fa"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-002",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-002",
           "size": 4194304,
-          "sha256": "7bb54871f7eb13c26cd49f6b5cf7f20e75d2574bc7a0214df66eef9b5b9c998d"
+          "sha256": "41253a1d39b68d0b2dedd5a7696d4dbeaecf59963815ab317e2fd631ad4193c5"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-003",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-003",
           "size": 4194304,
-          "sha256": "811767e53201d5ed24ce0458486a7e5954df266d77d0faf21c1e1a529ac00203"
+          "sha256": "c0603af5cb40550d30354da96b8ad28ad5f515dbc7e63215e182b1ca5a3aeb99"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-004",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-004",
           "size": 4194304,
-          "sha256": "53f988241b78da43cd0ffbac66b9c13d4c1ab8112c9d5c9954355e37aab85aec"
+          "sha256": "d98e5d94dede3012258e1299892c398f61241d57970b9c24c551426793d06ab4"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-005",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-005",
           "size": 4194304,
-          "sha256": "1e816d1b9c28c5ba66988aefa332b5b8f238e7d131c06f7d0bfaacd8843084ee"
+          "sha256": "87eaf80da6ff97baf76d4e84b2450d84460327eb3b52d242059b1e2f482daf18"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-006",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-006",
           "size": 4194304,
-          "sha256": "0ea602d7fd2fcad9d36ec24379af12847ea4694dd827d43ad4b479f5752fc7c5"
+          "sha256": "350010cc5bfb7bd964492dabb6262a410944e136509a36f5842658f892bc4cec"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-007",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-007",
           "size": 4194304,
-          "sha256": "c97554b6aa1402f28cb64d9166a80352f3ef61f79858038131fbfbaed51e7972"
+          "sha256": "3c92d04b2bd1557f2bd45c745546c0b3adf14f07439e6788aa9532d77795d88f"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-008",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-008",
           "size": 4194304,
-          "sha256": "9779a8ffb3000a44783300b2ef892235fa876bdce2c7dcb7f0af246308517b26"
+          "sha256": "d6b2f49bc8b078a0cc847a77984d231609b0af3f32a9221601ce7a56a8d644cc"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-009",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-009",
           "size": 4194304,
-          "sha256": "b27fc7dc922b08d4f88b00fb5e50be24bd11d0612e04bb7a7d619d2f992212a2"
+          "sha256": "dd2caa47c9ac99c5d16ec210ddcc4e58f9cbe27662787ee4c234707ee2b2e260"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-010",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-010",
           "size": 4194304,
-          "sha256": "0fa44919658443407fcf5165beb34944c5849094d18ed346d95d64e8b559021b"
+          "sha256": "49716a1613ad8d2ac52328736395b673268a7fe004f62a6f5cd60c8e6b90a37a"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-011",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-011",
           "size": 4194304,
-          "sha256": "b1084f4633809b973303d7d18e58b857eb833350e70e18e72e7aa00cba3f65cb"
+          "sha256": "7e0a747ddba49e2e57ca996a6163be86f5e94aa97475cfb9dde8ac68319b5bf1"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-012",
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-012",
           "size": 4194304,
-          "sha256": "885b6559665792befb74d5362a492283ba262a57f663ed0e54caabba0dce2ec7"
+          "sha256": "761a832f5b454a90398de27a394f1ea651ee9f4aaa39cf9ff7e80a1ce1b1c8de"
         },
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_Android.apk.part-013",
-          "size": 362388,
-          "sha256": "1b477e7fd558155e743896b8ea6dac3520535a76c07374ae6a595aebc8f68f7a"
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-013",
+          "size": 4194304,
+          "sha256": "d25abdb061dad6b257b23be8a11da033439ad4ae9ff2cda982d187652e5649c3"
+        },
+        {
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-014",
+          "size": 4194304,
+          "sha256": "d30bff28728e7c659ced2d1c2b00d046cf59b57647793d27fc0e560d48fd2020"
+        },
+        {
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-015",
+          "size": 4194304,
+          "sha256": "595393fa4981ec9bd54417795ee198fac9b50ed23b264f53ed1bd96f995f6591"
+        },
+        {
+          "path": "releases/3.5.2/L4NTrak_3.5.2_Android.apk.part-016",
+          "size": 2214403,
+          "sha256": "5b8288e61eb865f5c976a7310fa1c54daa049808938c98399a3f1f7e94addf9d"
         }
       ]
     },
     "linux": {
-      "path": "releases/3.5.1/L4NTrak_3.5.1_all.deb",
-      "size": 2778840,
-      "sha256": "345041477a5dad575d0b9e79e471ba0522ce0c6b77fc604d69b75321857bac06",
+      "path": "releases/3.5.2/L4NTrak_3.5.2_all.deb",
+      "size": 2783526,
+      "sha256": "3c60ad98aadf412a5f9fe6ed2577bcd8c3a9fb6bcd4a57e9162dc5212bf7c1a9",
       "parts": [
         {
-          "path": "releases/3.5.1/L4NTrak_3.5.1_all.deb.part-000",
-          "size": 2778840,
-          "sha256": "345041477a5dad575d0b9e79e471ba0522ce0c6b77fc604d69b75321857bac06"
+          "path": "releases/3.5.2/L4NTrak_3.5.2_all.deb.part-000",
+          "size": 2783526,
+          "sha256": "3c60ad98aadf412a5f9fe6ed2577bcd8c3a9fb6bcd4a57e9162dc5212bf7c1a9"
         }
       ]
     }

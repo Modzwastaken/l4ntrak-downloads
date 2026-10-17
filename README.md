@@ -1,6 +1,6 @@
 # L4NTrak downloads
 
-Version 3.5.1. [Download Android APK](https://github.com/Modzwastaken/l4ntrak-downloads/releases/download/v3.5.1/L4NTrak_3.5.1_Android.apk) · [Download Linux DEB](https://github.com/Modzwastaken/l4ntrak-downloads/releases/download/v3.5.1/L4NTrak_3.5.1_all.deb).
+Version 3.5.2. [Download Android APK](https://github.com/Modzwastaken/l4ntrak-downloads/releases/download/v3.5.2/L4NTrak_3.5.2_Android.apk) · [Download Linux DEB](https://github.com/Modzwastaken/l4ntrak-downloads/releases/download/v3.5.2/L4NTrak_3.5.2_all.deb).
 Install over the existing app to retain your local data. Do not uninstall first.
 Android and Linux still ask you to approve installation.
 
