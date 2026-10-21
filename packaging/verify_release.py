@@ -24,7 +24,7 @@ def prepare(root, output):
             raise ValueError('Asset path is outside its release directory')
         return candidate
 
-    for platform in ('android', 'linux'):
+    for platform in ('android', 'linux', 'windows'):
         asset = manifest['assets'][platform]
         target = output / Path(asset['path']).name
         with target.open('wb') as stream:
@@ -48,9 +48,9 @@ def prepare(root, output):
         if path.is_file() and path.name not in ('SHA256SUMS.txt', 'release-notes.md')
     ))
     (output / 'release-notes.md').write_text(
-        f'L4NTrak {version} for Android and Linux Mint/Debian. Install over the existing app to retain its data.\n\n'
+        f'L4NTrak {version} for Android, Windows x64 and Linux Mint/Debian. Install over the existing app to retain its data.\n\n'
         + manifest['notes'] + '\n\n'
-        + 'Includes the APK, DEB, update manifest, SHA-256 checksums, quick start and feature/test report. '
+        + 'Includes the APK, Windows ZIP, DEB, update manifest, SHA-256 checksums, quick start and feature/test report. '
         + 'Source and downloads retain this repository\'s public visibility. '
         + 'Physical GPS, phone radio, microphone/voice quality and local AI inference still require device checks.\n'
     )
