@@ -1,0 +1,68 @@
+name: Promote 4.0.0 to the in-app update feed
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: l4ntrak-release
+  cancel-in-progress: false
+jobs:
+  promote:
+    if: github.event_name == 'workflow_dispatch' || (github.event.release.tag_name == 'v4.0.0' && !github.event.release.prerelease)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Download and verify the published installers
+        run: |
+          set -euo pipefail
+          mkdir "$RUNNER_TEMP/release"
+          cd "$RUNNER_TEMP/release"
+          root="https://github.com/$GITHUB_REPOSITORY/releases/download/v4.0.0"
+          for suffix in Android.apk all.deb Windows_x64.zip; do
+            name="L4NTrak_4.0.0_$suffix"
+            curl --fail --silent --show-error --location --retry 4 "$root/$name" -o "$name"
+          done
+          sha256sum --check <<'SHA'
+          11befe12565617a86ff1c96adaf06fa3a878e448f9203ee89b21144e1a349229  L4NTrak_4.0.0_Android.apk
+          346a63f07304e0c8987bca7b1ba3ba69c7c571a4bbf3f0f09d87d4e690506904  L4NTrak_4.0.0_all.deb
+          d74debc3f24c192f684c8c91ddb96263b233cf4064c44eb51d9ce83c52c9cbdc  L4NTrak_4.0.0_Windows_x64.zip
+          SHA
+      - name: Build and publish the compatible segmented feed
+        run: |
+          set -euo pipefail
+          python3 - "$RUNNER_TEMP/release" <<'PY'
+          import datetime, hashlib, json, sys
+          from pathlib import Path
+          source = Path(sys.argv[1])
+          version = '4.0.0'
+          dest = Path('releases') / version
+          dest.mkdir(parents=True, exist_ok=True)
+          manifest = {
+              'schema': 1, 'version': version,
+              'published_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'notes': 'Refreshed icon, optional Trak conversation starters and Android offline English speech, plus map search, synchronization and Linux media fixes.',
+              'assets': {},
+          }
+          for platform, suffix in {'android':'Android.apk', 'linux':'all.deb', 'windows':'Windows_x64.zip'}.items():
+              name = f'L4NTrak_{version}_{suffix}'
+              data = (source / name).read_bytes()
+              parts = []
+              for index, start in enumerate(range(0, len(data), 4 * 1024 * 1024)):
+                  part = data[start:start + 4 * 1024 * 1024]
+                  path = dest / f'{name}.part-{index:03}'
+                  path.write_bytes(part)
+                  parts.append({'path': str(path), 'size': len(part), 'sha256': hashlib.sha256(part).hexdigest()})
+              manifest['assets'][platform] = {'path': str(dest / name), 'size': len(data), 'sha256': hashlib.sha256(data).hexdigest(), 'parts': parts}
+          Path('releases/latest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+          Path('VERSION').write_text(version + '\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add VERSION releases/latest.json releases/4.0.0
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Publish verified L4NTrak 4.0.0 update feed'
+          git push origin HEAD:main
