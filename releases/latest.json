@@ -1,142 +1,167 @@
 {
   "schema": 1,
-  "version": "3.7.0",
-  "published_at": "2026-11-19T00:43:13.896048+00:00",
-  "notes": "# L4NTrak 3.7.0\n\nOpen Trak from the mobile navigation or Insights & AI on your PC. Enable the assistant for your account. Draft a route request, save a preference, or check app health using the buttons below the message box. You can edit the request before sending it. Enable memory or app actions in Personalization to use those features. Local model conversations require a configured Ollama model. Optional team review adds a reviewer and editor pass.\n\nOpen the star in the toolbar or press Alt+J for Quick Access. Pinned and recent pages appear first. Type a page name to search and press Enter to open a single match. Expand Customize shortcuts and layout to edit your pins. Invited browser users see shortcuts for the shared vehicle.\n\nAndroid users can install over 3.6.0. Linux users can install the new DEB. Windows users should quit the host and extract the whole ZIP into a fresh folder before launching Start L4NTrak.cmd. Safari and other invited browsers receive the shared UI by updating their Windows or Linux host and reloading the page. Personal Trak profiles remain on the signed-in native device.\n",
+  "version": "4.0.0",
+  "published_at": "2026-11-19T03:44:55.184416+00:00",
+  "notes": "Refreshed icon, optional Trak conversation starters and Android offline English speech, plus map search, synchronization and Linux media fixes.",
   "assets": {
     "android": {
-      "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk",
-      "size": 69347983,
-      "sha256": "ad89f4cd72180fdce1e01d8ba67f6267f05835dfcb5d7786674ba466a7bba2d9",
+      "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk",
+      "size": 89746612,
+      "sha256": "11befe12565617a86ff1c96adaf06fa3a878e448f9203ee89b21144e1a349229",
       "parts": [
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-000",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-000",
           "size": 4194304,
-          "sha256": "ee22efd6f091d801ed6fac504c837181ef166d5aa02442d8c13b172d6f13cb0c"
+          "sha256": "bf50f8521ec41c98473b3e23e6ad5697c427d3669f09fb0ccb22f231c906bb13"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-001",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-001",
           "size": 4194304,
-          "sha256": "66ed2ed01c918e754279ff82e21fef3f658d5537b4a3949b9ebc718d43b45b7d"
+          "sha256": "317538d1d0b109577ffa6e6dd1ad1979d4f53940d2a310a422902ccf82d11dba"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-002",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-002",
           "size": 4194304,
-          "sha256": "93a2d8ba587d5a47b305a8322f0b4f7ecf117f4594a652dd33b5ec552b9b4e40"
+          "sha256": "d03f2e15ba1c04d1b16fe92d3b19b1ea6cc08e3c1317b2e16653bfac0a2182a7"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-003",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-003",
           "size": 4194304,
-          "sha256": "b7d49d3a8697955b99c808a3dbd1b408e4bd56ec955168d762d5bddbf5f5289e"
+          "sha256": "ed6c442eefb9e0a92194dbce66a8cebf63c6371a73fd40c57fb75f99c9cb0836"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-004",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-004",
           "size": 4194304,
-          "sha256": "30be63041c0540c823f24f4015f285e029c9dfd67b040a87e1ceadada7851b38"
+          "sha256": "73f73bff1afad0095d4c4a469609835c152c9b814255b685645ad512d3b1faf6"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-005",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-005",
           "size": 4194304,
-          "sha256": "99bdc28f0e557697224a2c5aa1e5fa45965ecbd9f383ebc14f7cdbd796bc6252"
+          "sha256": "a7f97f72320a9c4919b352aad63545140f78dec3711704b9cdd7e96e17079fa1"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-006",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-006",
           "size": 4194304,
-          "sha256": "07ff858608fcc7f7980213f84ff549d8da80437775e6770dc1cf44f3165e7fe6"
+          "sha256": "95b3b9ad1921cc156b7245f2b6e32af3d9d167f1212e327cb4d7bae997250881"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-007",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-007",
           "size": 4194304,
-          "sha256": "e646df136ec54d27f914ceed100429fc6d93163532e2e6ca1bcb76dede5563da"
+          "sha256": "4d76047a7058a53ad4bfae26a57fa2338f8b4cfb272e9504ac0fcc234e29b4a5"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-008",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-008",
           "size": 4194304,
-          "sha256": "be9ec5dfee3aa50a0ee4d0c795d18b596624f66d256014618861f5525b4a1232"
+          "sha256": "991bf4fe529b01a5da32012581c94d6115e04b6206b9e0b3128f2e187f5474d2"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-009",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-009",
           "size": 4194304,
-          "sha256": "8be9ff949b2aefb2f6851969a88d4ce95b3fc334ecefe415f4e67e60226b8fb4"
+          "sha256": "626cfcfb950048ed69d76440ff06a5f51eb1793401accef21d5b3ec72c631324"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-010",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-010",
           "size": 4194304,
-          "sha256": "f6b1f6518ecff749d635de4a5caa739c81ac7c8268bc905d7127821b0e8b1636"
+          "sha256": "7bb54871f7eb13c26cd49f6b5cf7f20e75d2574bc7a0214df66eef9b5b9c998d"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-011",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-011",
           "size": 4194304,
-          "sha256": "408aa6439a49491462044987a9a95af3e9779dd1edad7feebd9f0eacc9656e9c"
+          "sha256": "811767e53201d5ed24ce0458486a7e5954df266d77d0faf21c1e1a529ac00203"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-012",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-012",
           "size": 4194304,
-          "sha256": "b6cfb8023ac3f314c8865c0cbb8d7fa590e1d7e82e21a3e2aae7c8ca4341dfd7"
+          "sha256": "53f988241b78da43cd0ffbac66b9c13d4c1ab8112c9d5c9954355e37aab85aec"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-013",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-013",
           "size": 4194304,
-          "sha256": "07678c59e595d9d330e4b38f3d91a481b8c97494aa1ac9c697a707bb254b2e23"
+          "sha256": "1e816d1b9c28c5ba66988aefa332b5b8f238e7d131c06f7d0bfaacd8843084ee"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-014",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-014",
           "size": 4194304,
-          "sha256": "7ec4f1b68e972a1e7652139452fc87571d4f31bcfca31a687839bc4ff82d3f58"
+          "sha256": "0ea602d7fd2fcad9d36ec24379af12847ea4694dd827d43ad4b479f5752fc7c5"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-015",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-015",
           "size": 4194304,
-          "sha256": "22a057a9ba13eaa163afd3ba0f9bc64bcb074415703a36799c98de3755e7ccdf"
+          "sha256": "c97554b6aa1402f28cb64d9166a80352f3ef61f79858038131fbfbaed51e7972"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-016",
-          "size": 2239119,
-          "sha256": "5eb299c5776b6d6d1dafe2f97ddb90aa36aa02e770a8c1596dbbe29201572035"
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-016",
+          "size": 4194304,
+          "sha256": "9779a8ffb3000a44783300b2ef892235fa876bdce2c7dcb7f0af246308517b26"
+        },
+        {
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-017",
+          "size": 4194304,
+          "sha256": "b27fc7dc922b08d4f88b00fb5e50be24bd11d0612e04bb7a7d619d2f992212a2"
+        },
+        {
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-018",
+          "size": 4194304,
+          "sha256": "0fa44919658443407fcf5165beb34944c5849094d18ed346d95d64e8b559021b"
+        },
+        {
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-019",
+          "size": 4194304,
+          "sha256": "b1084f4633809b973303d7d18e58b857eb833350e70e18e72e7aa00cba3f65cb"
+        },
+        {
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-020",
+          "size": 4194304,
+          "sha256": "885b6559665792befb74d5362a492283ba262a57f663ed0e54caabba0dce2ec7"
+        },
+        {
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Android.apk.part-021",
+          "size": 1666228,
+          "sha256": "d5d19105eddfa54185bc6d99f612beb55c9c7ff2674fcc1810ece6605ad7e320"
         }
       ]
     },
     "linux": {
-      "path": "releases/3.7.0/L4NTrak_3.7.0_all.deb",
-      "size": 2615904,
-      "sha256": "73e0a1b9855f641add502f83f2416ca367046d73bfdf4dea7c5cf61e7bbfcce5",
+      "path": "releases/4.0.0/L4NTrak_4.0.0_all.deb",
+      "size": 2403312,
+      "sha256": "346a63f07304e0c8987bca7b1ba3ba69c7c571a4bbf3f0f09d87d4e690506904",
       "parts": [
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_all.deb.part-000",
-          "size": 2615904,
-          "sha256": "73e0a1b9855f641add502f83f2416ca367046d73bfdf4dea7c5cf61e7bbfcce5"
+          "path": "releases/4.0.0/L4NTrak_4.0.0_all.deb.part-000",
+          "size": 2403312,
+          "sha256": "346a63f07304e0c8987bca7b1ba3ba69c7c571a4bbf3f0f09d87d4e690506904"
         }
       ]
     },
     "windows": {
-      "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip",
-      "size": 18436618,
-      "sha256": "2d235568fe1065003c6ba9485586b8eec3a1be98fda560cfc74e7d490e867ec4",
+      "path": "releases/4.0.0/L4NTrak_4.0.0_Windows_x64.zip",
+      "size": 18227245,
+      "sha256": "d74debc3f24c192f684c8c91ddb96263b233cf4064c44eb51d9ce83c52c9cbdc",
       "parts": [
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-000",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Windows_x64.zip.part-000",
           "size": 4194304,
-          "sha256": "149bcc872066f5d8dd9e75164af821de88faa8b52dbea707e94e522edcfcd9cb"
+          "sha256": "235bcc665706b62510e6adb4679ad6a515e90a464ab1f080e3aa59b15ee47be4"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-001",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Windows_x64.zip.part-001",
           "size": 4194304,
-          "sha256": "9a661ff2e2773ce54476d24e57f5edf6f6bfdf74b1d85077025520b957d1196f"
+          "sha256": "e5fb620091118f61a9df8158920d51551aafb98ce60e42b1e92598944d3f9452"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-002",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Windows_x64.zip.part-002",
           "size": 4194304,
-          "sha256": "d6b127b30e8ef6d16ff07ada279c880180fe6c1bdd23346035b1d9cb7fa0e740"
+          "sha256": "ca23fbc13bca5cccb86cdd2a7e578eb4a682a8be205b087a2aed47a6663d8b7c"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-003",
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Windows_x64.zip.part-003",
           "size": 4194304,
-          "sha256": "2dffa09cd368db2deb2668a22d5d37a43e9333e98a55b8cd2155ff086f26b5fb"
+          "sha256": "c6473b4877d3ffcb10d398c83836d7eea8186c1d9cba328b4c03f7447ba7194e"
         },
         {
-          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-004",
-          "size": 1659402,
-          "sha256": "48ba9579b52f8a844cae18f167fbd7ea527531d3896ababeea2d07ec7e5f25e5"
+          "path": "releases/4.0.0/L4NTrak_4.0.0_Windows_x64.zip.part-004",
+          "size": 1450029,
+          "sha256": "a3a94090c26d2982b77543a3edbe0dacf1d06f4da9b61c4bacb6f03e80d025ed"
         }
       ]
     }
