@@ -1,142 +1,142 @@
 {
   "schema": 1,
-  "version": "3.6.0",
-  "published_at": "2026-10-21T03:56:41.097222+00:00",
-  "notes": "# L4NTrak 3.6.0\n\n- Maps: Early / Normal / Late time advance, saved with the vehicle. Normal uses full road instructions; Rally adds a concise next-turn preview; Race uses short calls for closed-course planning. Final turn cues retain the GPS accuracy guard. No corner grades, racing lines or braking points are invented.\n- Voice: fixes split \u201cHey Trak\u201d / question handoff and accepts \u201cHey, Track\u201d. Enable foreground wake listening in Maps \u2192 Trak voice; it resumes after silence or an answer. Tap-to-ask remains one question. Permission/service errors, backgrounding, Quiet Trak and leaving Maps stop listening. Android may play recognition tones on each restart.\n- Trak: handles \u201copen music\u201d, \u201cset a route to\u2026\u201d, timing and mode changes through app controls before model inference. Everyday chat sends a shorter prompt and history; Fast is now the default even on older projects without a speed preference. Quick jobs return sooner through adaptive polling.\n- Friends: three steps\u2014Connect, exchange friend cards, choose a conversation. Call is the primary conversation action; groups, network setup and management live under Advanced. Encryption, identity checks, receiver permission and delivery receipts remain enforced.\n- Setup revision 4 explains Maps timing/modes, friends versus device pairing, browser access, AI host choices, sync and update alerts. Existing records are retained.\n- Updates: quiet signed-in release alerts, per-version dismissal, and Android, Windows and Linux download links together on Software updates. No automatic installation or sign-in popup.\n- Windows: portable x64 ZIP with bundled Python and cryptography. Extract the whole ZIP and run Start L4NTrak.cmd. The UI opens in your default browser; the local PC host stays running until Quit. Install official Windows Ollama separately for AI inference. Windows media keys support toggle/next/previous/volume; native song metadata, Bluetooth and built-in VPN activation are not provided in this edition.\n- Browser access: opt-in HTTPS host on the PC, one-use five-minute invitations, eight-hour browser sessions, and revocation on sign-out or vehicle switch. Browser edits use the PC's current records immediately. Device pairing, account keys, VPN activation and OS controls stay on the PC.\n- Apple browsers: own GPS, route progress, directions and speech output; optional foreground GPS sharing with the PC. Trust the device-local HTTPS certificate for sensors. Speech recognition requires explicit browser-provider consent and browser support. Background tracking, notification access and cross-app music control depend on the browser and differ from Android.\n\nInstall over Android/Linux without uninstalling. Windows: quit the old host, extract the new portable ZIP to a new folder, then launch it; records remain in %LOCALAPPDATA%\\L4NTrak. Keep the PC running for browser clients. Native device sync still includes saved records and attachments with conflict checks; credentials, device permissions, VPN private keys and downloaded AI models are device-local.\n",
+  "version": "3.7.0",
+  "published_at": "2026-11-19T00:43:13.896048+00:00",
+  "notes": "# L4NTrak 3.7.0\n\nOpen Trak from the mobile navigation or Insights & AI on your PC. Enable the assistant for your account. Draft a route request, save a preference, or check app health using the buttons below the message box. You can edit the request before sending it. Enable memory or app actions in Personalization to use those features. Local model conversations require a configured Ollama model. Optional team review adds a reviewer and editor pass.\n\nOpen the star in the toolbar or press Alt+J for Quick Access. Pinned and recent pages appear first. Type a page name to search and press Enter to open a single match. Expand Customize shortcuts and layout to edit your pins. Invited browser users see shortcuts for the shared vehicle.\n\nAndroid users can install over 3.6.0. Linux users can install the new DEB. Windows users should quit the host and extract the whole ZIP into a fresh folder before launching Start L4NTrak.cmd. Safari and other invited browsers receive the shared UI by updating their Windows or Linux host and reloading the page. Personal Trak profiles remain on the signed-in native device.\n",
   "assets": {
     "android": {
-      "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk",
-      "size": 69339723,
-      "sha256": "868e924ade4f9720ba737a525ba0ef31f65c5a8dc37007ea80976a1fa68f8388",
+      "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk",
+      "size": 69347983,
+      "sha256": "ad89f4cd72180fdce1e01d8ba67f6267f05835dfcb5d7786674ba466a7bba2d9",
       "parts": [
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-000",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-000",
           "size": 4194304,
-          "sha256": "39f85c0ad53ce5142de7e5ad575b5608944457b116c0161a323a8c2e857b0b7f"
+          "sha256": "ee22efd6f091d801ed6fac504c837181ef166d5aa02442d8c13b172d6f13cb0c"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-001",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-001",
           "size": 4194304,
-          "sha256": "4ee93fcde8cb8aba5716fbfade30144b4bd4a258f9409905134464d9356c80de"
+          "sha256": "66ed2ed01c918e754279ff82e21fef3f658d5537b4a3949b9ebc718d43b45b7d"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-002",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-002",
           "size": 4194304,
-          "sha256": "3f8ab1562c3e8b3d27a16a07f0524669bc84b86a0b42d9aad873cb4e767edede"
+          "sha256": "93a2d8ba587d5a47b305a8322f0b4f7ecf117f4594a652dd33b5ec552b9b4e40"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-003",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-003",
           "size": 4194304,
-          "sha256": "986f4ec1c49750e5ad65cb5e65337f144963437258049c4002bf595fca7d8ea0"
+          "sha256": "b7d49d3a8697955b99c808a3dbd1b408e4bd56ec955168d762d5bddbf5f5289e"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-004",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-004",
           "size": 4194304,
-          "sha256": "49251396d4f2126837793c5f676d8ac213e96f72ea5eeb77f995c88de273d95f"
+          "sha256": "30be63041c0540c823f24f4015f285e029c9dfd67b040a87e1ceadada7851b38"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-005",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-005",
           "size": 4194304,
-          "sha256": "f24e1bfe61415939eb8b8272bdbaf62f587071add2f9254f5fab5603462e180d"
+          "sha256": "99bdc28f0e557697224a2c5aa1e5fa45965ecbd9f383ebc14f7cdbd796bc6252"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-006",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-006",
           "size": 4194304,
-          "sha256": "d45ddc3bdb2224a5ac8b9b45f1f5851e933d67714f94f36e8552b36f3a41e22f"
+          "sha256": "07ff858608fcc7f7980213f84ff549d8da80437775e6770dc1cf44f3165e7fe6"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-007",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-007",
           "size": 4194304,
-          "sha256": "f77b3944be99f064d0b183d315c4945723c9e63ff4ed2e23ec49737348a2c3f7"
+          "sha256": "e646df136ec54d27f914ceed100429fc6d93163532e2e6ca1bcb76dede5563da"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-008",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-008",
           "size": 4194304,
-          "sha256": "6b127ade015b55e2b2163fa460c80ba78d77bb1d94b8a793d8ca1216b95e4eb8"
+          "sha256": "be9ec5dfee3aa50a0ee4d0c795d18b596624f66d256014618861f5525b4a1232"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-009",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-009",
           "size": 4194304,
-          "sha256": "789076f1a2a99ca4ddf5f1f0520ab0865f2fd92bdd8f56b0054589e07d19df9a"
+          "sha256": "8be9ff949b2aefb2f6851969a88d4ce95b3fc334ecefe415f4e67e60226b8fb4"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-010",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-010",
           "size": 4194304,
-          "sha256": "c365b2a5282d897ce434ac756cec6aeb26f820c68ed34ab1700f7a269f8b94e4"
+          "sha256": "f6b1f6518ecff749d635de4a5caa739c81ac7c8268bc905d7127821b0e8b1636"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-011",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-011",
           "size": 4194304,
-          "sha256": "b0ac09266ac2c22e815ea70dfb15d3ddb044d1640a17872b52f9ae733278dba3"
+          "sha256": "408aa6439a49491462044987a9a95af3e9779dd1edad7feebd9f0eacc9656e9c"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-012",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-012",
           "size": 4194304,
-          "sha256": "e17c0fe7dd809727ded9c35d5a87495509b3ce1553cad1d90d81ee1fc9e61ec7"
+          "sha256": "b6cfb8023ac3f314c8865c0cbb8d7fa590e1d7e82e21a3e2aae7c8ca4341dfd7"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-013",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-013",
           "size": 4194304,
-          "sha256": "cc5dee5556114e29d373b22440548d5962ad4fd493f70364f385a58c971d040a"
+          "sha256": "07678c59e595d9d330e4b38f3d91a481b8c97494aa1ac9c697a707bb254b2e23"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-014",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-014",
           "size": 4194304,
-          "sha256": "8eaaccf7ccfa58517bd4205f6f5515625152df8012b52ff3de97030d60ec83ec"
+          "sha256": "7ec4f1b68e972a1e7652139452fc87571d4f31bcfca31a687839bc4ff82d3f58"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-015",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-015",
           "size": 4194304,
-          "sha256": "301537fbfa18cbb11e5a09a6c1f3b7fddbe4f86a847498aa854649b4204da6ac"
+          "sha256": "22a057a9ba13eaa163afd3ba0f9bc64bcb074415703a36799c98de3755e7ccdf"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Android.apk.part-016",
-          "size": 2230859,
-          "sha256": "ab4e3b94bc11037a1823312ac64fe4ae9aa885e2d9671bf8a7c37e716e73ee93"
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Android.apk.part-016",
+          "size": 2239119,
+          "sha256": "5eb299c5776b6d6d1dafe2f97ddb90aa36aa02e770a8c1596dbbe29201572035"
         }
       ]
     },
     "linux": {
-      "path": "releases/3.6.0/L4NTrak_3.6.0_all.deb",
-      "size": 2792762,
-      "sha256": "4366e5588bce442b01c7d818f47b15bc3aef03b20999898489db894079fb37ac",
+      "path": "releases/3.7.0/L4NTrak_3.7.0_all.deb",
+      "size": 2615904,
+      "sha256": "73e0a1b9855f641add502f83f2416ca367046d73bfdf4dea7c5cf61e7bbfcce5",
       "parts": [
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_all.deb.part-000",
-          "size": 2792762,
-          "sha256": "4366e5588bce442b01c7d818f47b15bc3aef03b20999898489db894079fb37ac"
+          "path": "releases/3.7.0/L4NTrak_3.7.0_all.deb.part-000",
+          "size": 2615904,
+          "sha256": "73e0a1b9855f641add502f83f2416ca367046d73bfdf4dea7c5cf61e7bbfcce5"
         }
       ]
     },
     "windows": {
-      "path": "releases/3.6.0/L4NTrak_3.6.0_Windows_x64.zip",
-      "size": 18429579,
-      "sha256": "d206c91e264ee0982d9c32e9821e5085b5f168a102c6b0948cfd41d31c7a272c",
+      "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip",
+      "size": 18436618,
+      "sha256": "2d235568fe1065003c6ba9485586b8eec3a1be98fda560cfc74e7d490e867ec4",
       "parts": [
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Windows_x64.zip.part-000",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-000",
           "size": 4194304,
-          "sha256": "c63c5deeae309c55ad644c36833a2e8018bbb02cb7512bc0ad0b02f3348e8614"
+          "sha256": "149bcc872066f5d8dd9e75164af821de88faa8b52dbea707e94e522edcfcd9cb"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Windows_x64.zip.part-001",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-001",
           "size": 4194304,
-          "sha256": "f5c1aeb2e53206aaa986ba839ea67293b36f5a4cae1f9856d54432131211c66f"
+          "sha256": "9a661ff2e2773ce54476d24e57f5edf6f6bfdf74b1d85077025520b957d1196f"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Windows_x64.zip.part-002",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-002",
           "size": 4194304,
-          "sha256": "08d551a7f168659accc7935989c543c917b57da17977533e7f3ebade75cdedde"
+          "sha256": "d6b127b30e8ef6d16ff07ada279c880180fe6c1bdd23346035b1d9cb7fa0e740"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Windows_x64.zip.part-003",
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-003",
           "size": 4194304,
-          "sha256": "06afa44696975249687d396f63e61bedbccb43b01cb50f6f5c8a11f6d7b1626e"
+          "sha256": "2dffa09cd368db2deb2668a22d5d37a43e9333e98a55b8cd2155ff086f26b5fb"
         },
         {
-          "path": "releases/3.6.0/L4NTrak_3.6.0_Windows_x64.zip.part-004",
-          "size": 1652363,
-          "sha256": "3ca3319750b7f4983371b1e9937739643420184062bff98769b84286b8f9601b"
+          "path": "releases/3.7.0/L4NTrak_3.7.0_Windows_x64.zip.part-004",
+          "size": 1659402,
+          "sha256": "48ba9579b52f8a844cae18f167fbd7ea527531d3896ababeea2d07ec7e5f25e5"
         }
       ]
     }
